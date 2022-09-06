@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake,Water,Gun GAME</title>
+</head>
+
+<body>
+    <h1>Welcome to Snake,Water,Gun GAME</h1>
+    <script>
+        let round = 5;
+        let YourScore = 0;
+        let CompScore = 0;
+        console.log("Welcome to the game. \n")
+        for (let i = 0; i < round; i++) {
+            let choice = prompt("Enter s, w & g")
+            if(choice == "s" || choice == "w" || choice == "g"){
+
+                console.log("You chose" + ' ' + choice);
+            }
+            else{
+                console.log("Wrong input\n Etner s or w or g")
+            break;
+            }
+
+            let rando = Math.floor(Math.random() * 3); // generate randon no. 
+            // console.log(rando)
+
+
+            let arr = ["s", "w", "g"]
+            let com = arr[rando]
+            console.log("comp chose" + ' ' + com);
+
+
+            // **** FOR SNAKE ********
+            while (choice === "s") {
+                if ((choice == "s") && (com == "w")) {
+                    console.log(`S vs W
+Snake drunk water 
+So YOU Won`)
+                    YourScore += 1;
+                    console.log("Your Score = " + YourScore);
+                    break;
+                }
+                else if ((choice == "s") && (com == "g")) {
+                    console.log(`S Vs G
+Gun killed Snake 
+So COMP WON`)
+                    CompScore += 1;
+                    console.log("Comp Score = " + CompScore);
+                    break;
+                }
+                else {
+                    console.log("Both have chosen same\nSo game TIE")
+                    break;
+                }
+            }
+
+            //** FOR WATER *****   
+            while (choice === "w") {
+                if ((choice == "w") && (com == "g")) {
+                    console.log(`W Vs G
+Gun drown in Water 
+So YOU Won`)
+                    YourScore += 1;
+                    console.log("Your Score = " + YourScore);
+                    break;
+                }
+                else if ((choice == "w") && (com == "s")) {
+                    console.log(`W Vs S
+Snake Drunk Water 
+So COMP WON`)
+                    CompScore += 1;
+                    console.log("Comp Score = " + CompScore);
+                    break;
+                }
+                else {
+                    console.log("Both have chosen same\nSo game TIE")
+                    break;
+                }
+            }
+            //** FOR GUN ******
+
+            while (choice === "g") {
+                if ((choice == "g") && (com == "s")) {
+                    console.log(`g vs S
+Gun can Kill Snake 
+So YOU Won`)
+                    YourScore += 1;
+                    console.log("Your Score = " + YourScore);
+                    break;
+                }
+                else if ((choice == "g") && (com == "w")) {
+                    console.log(`G Vs W
+Gun drown in Water 
+So COMP WON`)
+                    CompScore += 1;
+                    console.log("Comp Score = " + CompScore);
+                    break;
+                }
+                else {
+                    console.log("Both have chosen same\nSo game TIE")
+                    break;
+                }
+            }
+
+        }
+// ***** GAME SCORE **********
+
+        if(YourScore > CompScore){
+            console.log("YOU WON THE GAME✌🎉")
+        }
+        else if(YourScore == CompScore) {
+           console.log("YOU both score same\n Game TIE")    
+        }
+        else{
+            console.log("You LOST the GAME😥")
+        }
+
+
+//**********************************
+// let play= confirm("Do You want to play again")
+// if(play == true){
+//  playAgain();
+// }
+
+
+    </script>
+</body>
+
+</html>
